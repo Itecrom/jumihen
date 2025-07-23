@@ -9,7 +9,7 @@
 
 ## Project Overview
 
-Jumihen aims to empower small and medium sellers by offering a free and centralized platform to advertise their goods. This platform will support:
+Jumihen aims to empower small and medium sellers by offering a subsdised and centralized platform to advertise their goods. This platform will support:
 
 - Seller product uploads (with image, price, description, contact).
 - A publicly viewable product catalog.
@@ -28,6 +28,7 @@ Jumihen aims to empower small and medium sellers by offering a free and centrali
 ## Key Features
 
 - **Sellers** can upload product images, prices, descriptions, and contacts.
+-**Admins** can upload products
 - **Users** can search and view listings in a clean, responsive interface.
 - **Admin Panel** to:
   - Approve or reject seller submissions.
@@ -36,17 +37,16 @@ Jumihen aims to empower small and medium sellers by offering a free and centrali
 
 ## Contributors
 
-This project was developed by **TEVET ICT OJT Students TEAM B 2025** from **Namitembo and Sakata Technical College** as part of a **Hands-on Practical ICT Training Program** at **ITEC ICT SOLUTIONS**.
+This project was developed by **TEVET ICT OJT Students TEAM B, 2025** from **Namitembo and Sakata Technical College** as part of a **Hands-on Practical ICT Training Program** at **ITEC ICT SOLUTIONS**.
 
 - **Gladys Junta**
-- **Christina Nkawihe**
 - **Getrude Mission**
 - **Promise Henderson**
+- **Christina Nkawihe**
 
 **Trainer & Supervisor:**  
 **Leonard JJ Mhone**  
 Founder and CEO, ITEC ICT SOLUTIONS
-
 
 ## Learning Objectives
 
@@ -72,11 +72,12 @@ Founder and CEO, ITEC ICT SOLUTIONS
 - SMS or Email notifications for approved entries.
 - Payment gateway integration.
 - Seller dashboards for managing their own products.
+-Front end pop up chat between online admin and customers
 
 
 ## 📝 License
 
-This project is for educational purposes and training under ITEC ICT HUB. Redistribution without consent is not permitted.
+This project is for educational purposes and training under ITEC ICT SOLUTIONS. Redistribution without consent is not permitted.
 
 
 ## ✉️ Contact
