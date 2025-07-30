@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 26, 2025 at 09:32 AM
+-- Generation Time: Jul 30, 2025 at 10:55 AM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -24,15 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_register`
+-- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin_register`;
-CREATE TABLE IF NOT EXISTS `admin_register` (
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `picture` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
@@ -42,11 +43,11 @@ CREATE TABLE IF NOT EXISTS `admin_register` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_details`
+-- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `product_details`;
-CREATE TABLE IF NOT EXISTS `product_details` (
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
   `id` int NOT NULL AUTO_INCREMENT,
   `description` varchar(200) NOT NULL,
   `photo` varchar(100) NOT NULL,
@@ -61,15 +62,16 @@ CREATE TABLE IF NOT EXISTS `product_details` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_register`
+-- Table structure for table `sellers`
 --
 
-DROP TABLE IF EXISTS `users_register`;
-CREATE TABLE IF NOT EXISTS `users_register` (
+DROP TABLE IF EXISTS `sellers`;
+CREATE TABLE IF NOT EXISTS `sellers` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `picture` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
