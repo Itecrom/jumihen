@@ -6,7 +6,6 @@
 > Status: In Development  
 > Technologies: PHP, HTML, CSS, React.js  
 
-
 ## Project Overview
 
 Jumihen aims to empower small and medium sellers by offering a subsdised and centralized platform to advertise their goods. This platform will support:
@@ -16,14 +15,12 @@ Jumihen aims to empower small and medium sellers by offering a subsdised and cen
 - Admin dashboard for product moderation and catalog management.
 - Secure backend with user role authentication (Admin vs Seller).
 
-
 ## Technologies Used
 
 - **Frontend:** HTML, CSS, React.js  
 - **Backend:** PHP (with MySQL Database)
 - **Styling & Animations:** CSS3
 - **Security:** Basic input validation, SQL injection protection, session-based authentication.
-
 
 ## Key Features
 
@@ -56,14 +53,12 @@ Founder and CEO, ITEC ICT SOLUTIONS
 - Creating interactive, animated, and responsive UIs.
 - Building scalable and maintainable codebases.
 
-
 ## Security Considerations
 
 - SQL injection prevention using prepared statements.
 - Validation of all form inputs.
 - Admin access protected with hashed passwords and session-based authentication.
 - Upload filters for media files to prevent abuse.
-
 
 ## Future Improvements
 
@@ -72,7 +67,7 @@ Founder and CEO, ITEC ICT SOLUTIONS
 - SMS or Email notifications for approved entries.
 - Payment gateway integration.
 - Seller dashboards for managing their own products.
--Front end pop up chat between online admin and customers
+- Front end pop up chat between online admin and customers
 
 
 ## 📝 License
