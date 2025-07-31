@@ -1,58 +1,61 @@
 <?php
-//Apa ndekuti tapanga include kumene kuli ma login aku server kuti register athe kupita kukasiya zinthu ku Database
-$file = '../includes/polowela.php';
-
-// Check if the file exists before including it
-if (file_exists($file)) {
-    include($file);
-} else {
-    die("Required configuration file missing.");
-}
-
-// Start the session
 session_start();
 
-// Check if the user is already logged in
+// Include DB config
+$configFile = '../includes/polowela.php';
+if (!file_exists($configFile)) {
+    die("Required configuration file missing.");
+}
+include($configFile);
+
+$error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $email = trim($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("INSERT INTO admins (username, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $username, $email, $password);
+    // Handle image upload
+    $picture = null;
+    if (!empty($_FILES['picture']['name'])) {
+        $uploadDir = '../uploads/admins/';
+        if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
 
-    if ($stmt->execute()) {
-        header("Location: login.php?success=1");
-        exit();
-    } else {
-        $error = "Error: " . $stmt->error;
+        $ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+        $filename = uniqid('admin_') . "." . strtolower($ext);
+        $targetFile = $uploadDir . $filename;
+
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], $targetFile)) {
+            $picture = $filename;
+        } else {
+            $error = "Failed to upload profile picture.";
+        }
+    }
+
+    if (!$error) {
+        $stmt = $conn->prepare("INSERT INTO admins (username, email, password, picture) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $username, $email, $password, $picture);
+
+        if ($stmt->execute()) {
+            header("Location: login.php?success=1");
+            exit();
+        } else {
+            $error = "Error: " . $stmt->error;
+        }
+        $stmt->close();
     }
 }
 ?>
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/logo.jpeg">
-    <title>Admin Register</title>
-</head>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Signup - Jumihen</title>
     <link rel="icon" type="image/png" href="../images/logo.jpeg">
-    
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         body {
             margin: 0;
-            padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to right, #144999ff, #1b2836);
             height: 100vh;
@@ -124,36 +127,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </style>
 </head>
-
-<body>  
+<body>
 <div class="box">
-    <image src="../images/logo.jpeg" alt="Logo">
-    <h2>admin register</h2>
+    <img src="../images/logo.jpeg" alt="Logo">
+    <h2>Admin Register</h2>
 
-    <? // Display error message if any
-      if (isset($error)) echo "<p style='color: #ff7373;'>$error</p>"; ?>
+    <?php
+    // Display error message if exists 
+    if (!empty($error)): ?>
+        <p style="color: #ff7373;"><?php echo htmlspecialchars($error); ?></p>
+    <?php endif; ?>
 
-    <form method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="file" name="picture" accept="image/*">
         
-        <label for="picture">Picture:</label>
-        <input type="file" id="picture" name="picture" accept="image/*"><br><br>
-
-         <div class="btn-row">
-            <button class="btn">Register</button>
+        <div class="btn-row">
+            <button class="btn" type="submit">Register</button>
             <span class="login-link">Already have an account? <a href="login.php">Login</a></span>
-        </div>       
+        </div>
     </form>
 </div>
 
 <footer>© Jumihen Admin 2025</footer>
-
 </body>
 </html>
