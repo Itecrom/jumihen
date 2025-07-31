@@ -7,7 +7,7 @@
 <body>
     
 <div>
-    <h1>seller sign up</h1>
+    <h1>admin register</h1>
     <form action="register.php" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>

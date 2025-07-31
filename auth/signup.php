@@ -2,13 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>seller sign up</title>
+    <title>seller signup</title>
 </head>
 <body>
     
 <div>
-    <h1>Admin Registration</h1>
-    <form action="register.php" method="post">
+    <h1>seller signup</h1>
+    <form action="signup.php" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
 
