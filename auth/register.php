@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle image upload
     $picture = null;
     if (!empty($_FILES['picture']['name'])) {
-        $uploadDir = '../uploads/admins/';
+        $uploadDir = '../uploads/admin/';
         if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
 
         $ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!$error) {
-        $stmt = $conn->prepare("INSERT INTO admins (username, email, password, picture) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO admin (username, email, password, picture) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $username, $email, $password, $picture);
 
         if ($stmt->execute()) {
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="box">
-    <img src="../images/logo.jpeg" alt="Logo">
+    <img src="..images/logo.png" alt="logo">
     <h2>Admin Register</h2>
 
     <?php
