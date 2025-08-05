@@ -31,7 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if (!$error) {
+ if (!$error) {
+    // Check if username or email already exists
+    $checkStmt = $conn->prepare("SELECT id FROM admin WHERE username = ? OR email = ?");
+    $checkStmt->bind_param("ss", $username, $email);
+    $checkStmt->execute();
+    $checkStmt->store_result();
+
+    if ($checkStmt->num_rows > 0) {
+        $error = "Username or email is already registered.";
+    } else {
+        // Proceed to insert
         $stmt = $conn->prepare("INSERT INTO admin (username, email, password, picture) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $username, $email, $password, $picture);
 
@@ -43,6 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $stmt->close();
     }
+
+    $checkStmt->close();
+}
+
 }
 ?>
 <!DOCTYPE html>
