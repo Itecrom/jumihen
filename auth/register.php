@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Signup - Jumihen</title>
-    <link rel="icon" type="image/png" href="../images/logo.jpeg">
+    <link rel="icon" type="image/png" href="../images/logo.png">
     <style>
         * { box-sizing: border-box; }
         body {
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="box">
-    <img src="..images/logo.png" alt="logo">
+    <img src="../images/logo.png" alt="logo">
     <h2>Admin Register</h2>
 
     <?php
