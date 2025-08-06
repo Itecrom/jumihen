@@ -113,6 +113,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <div>
+    <div class="box">
+<<<<<<< HEAD
+ <img src="../images/logo.png" alt="logo.png">
+=======
+    <img src="../images/logo.png" alt="logo">
+>>>>>>> d446b8d1d6f2937eab76fa69e5f6af8a1e7c773a
     <h1>Admin Login</h1>
 
     <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
