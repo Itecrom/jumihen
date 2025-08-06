@@ -143,11 +143,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="box">
-<<<<<<< HEAD
+    
  <img src="../images/logo.png" alt="logo.png">
-=======
-    <img src="../images/logo.png" alt="logo">
->>>>>>> d446b8d1d6f2937eab76fa69e5f6af8a1e7c773a
     <h2>Admin Register</h2>
 
     <?php

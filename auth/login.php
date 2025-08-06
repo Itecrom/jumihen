@@ -126,8 +126,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </body>
         </html>
  <img src="../images/logo.png" alt="logo.png">
-    <img src="../images/logo.png" alt="logo">
-
 
     <h1>Admin Login</h1>
 
