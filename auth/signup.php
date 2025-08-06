@@ -101,9 +101,9 @@
         <label for="picture">Picture:</label>
         <input type="file" id="picture" name="picture" accept="image/*"><br><br>
 
-        <button type="submit">Register</button>
+        <button type="submit">signup</button>
     </form>
-    <p>Already have an account? <a href="login.php">Login here</a>.</p>
+    <p>Already have an account? <a href="signin.php">signin here</a>.</p>
 </div>
 </body>
 </html>
