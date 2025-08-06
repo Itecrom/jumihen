@@ -114,11 +114,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div>
     <div class="box">
-<<<<<<< HEAD
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            
+        </body>
+        </html>
  <img src="../images/logo.png" alt="logo.png">
-=======
     <img src="../images/logo.png" alt="logo">
->>>>>>> d446b8d1d6f2937eab76fa69e5f6af8a1e7c773a
+
+
     <h1>Admin Login</h1>
 
     <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
