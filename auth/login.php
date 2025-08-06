@@ -1,5 +1,5 @@
 <?php
-$file = '../includes/config.php';
+$file = '../includes/polowela.php';
 if (file_exists($file)) {
     include($file);
 } else {
