@@ -8,7 +8,7 @@ if (file_exists($file)) {
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email']);
+    $username = trim($_POST['username']);
     $password = $_POST['password'];
 
     $stmt = $conn->prepare("SELECT * FROM admin WHERE email = ?");
