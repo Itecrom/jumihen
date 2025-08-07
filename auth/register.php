@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!$error) {
-        $stmt = $conn->prepare("INSERT INTO admins (username, email, password, picture) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO admin (username, email, password, picture) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $username, $email, $password, $picture);
 
         if ($stmt->execute()) {
@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $checkStmt->close();
 }
+
 
 
 ?>
