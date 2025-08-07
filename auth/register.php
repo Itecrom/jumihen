@@ -46,6 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $checkStmt->close();
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
