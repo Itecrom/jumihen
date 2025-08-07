@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         footer {
             position: absolute;
             bottom: 5px;
-            font-size: 13px;
+            font-size: 12px;
             color: #ccc;
         }
     </style>
@@ -143,6 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <p>Don't have an account? <a href="register.php">Register here</a>.</p>
 </div>
-
+</div>
+<footer>© Jumihen Admin 2025</footer>
 </body>
 </html>
