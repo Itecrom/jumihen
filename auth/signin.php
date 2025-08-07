@@ -100,5 +100,8 @@
     </form>
     <p>Don't have an account? <a href="signup.php">signup here</a>.</p>
 </div>
+<div>
+    <footer>© Jumihen Admin 2025</footer>
+</div>
 </body>
 </html>

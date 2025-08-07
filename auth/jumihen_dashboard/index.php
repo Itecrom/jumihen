@@ -35,7 +35,169 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JUMIHEN Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+</head>
+<head>
+  <style>
+    {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f2f8ff;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sidebar ul li:hover,
+.sidebar ul .active {
+  background-color: #0056b3;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #007bff;
+}
+
+.admin {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  background-color: #e6f0ff;
+  padding: 20px;
+  border-left: 5px solid #007bff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.card span {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Panels */
+.panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.panel {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.panel h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.panel ul {
+  margin-bottom: 10px;
+}
+
+.panel input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.panel button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin: 5px 5px 5px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.panel button:hover {
+  background-color: #0056b3;
+}
+
+.panel a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.panel a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+}
+
+table td {
+  padding: 5px;
+}
+ .footer {
+            position: absolute;
+            bottom: 5px;
+            font-size: 13px;
+            color: #ccc;
+        }
+  </style>
 </head>
 <body>
   <div class="container">

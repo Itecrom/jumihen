@@ -72,7 +72,7 @@
             color: #144999ff;
             text-decoration: none;
         }
-        footer {
+        .footer {
             position: absolute;
             bottom: 5px;
             font-size: 13px;
@@ -101,9 +101,13 @@
         <label for="picture">Picture:</label>
         <input type="file" id="picture" name="picture" accept="image/*"><br><br>
 
-        <button type="submit">signup</button>
+
+       <button type="submit">signup</button>
     </form>
-    <p>Already have an account? <a href="signin.php">signin here</a>.</p>
+    <p>Don't have an account? <a href="signin.php">signin here</a>.</p>
+</div>
+<div>
+    <footer>© Jumihen Admin 2025</footer>
 </div>
 </body>
 </html>
