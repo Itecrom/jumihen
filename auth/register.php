@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle image upload
     $picture = null;
     if (!empty($_FILES['picture']['name'])) {
-        $uploadDir = '../uploads/admins/';
+        $uploadDir = '../uploads/admin/';
         if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
 
         $ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!$error) {
-        $stmt = $conn->prepare("INSERT INTO admin (username, email, password, picture) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO admins (username, email, password, picture) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $username, $email, $password, $picture);
 
         if ($stmt->execute()) {
@@ -43,6 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $stmt->close();
     }
+
+    $checkStmt->close();
+}
+
 }
 ?>
 <!DOCTYPE html>
@@ -51,13 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Signup - Jumihen</title>
-    <link rel="icon" type="image/png" href="../images/logo.jpeg">
+    <link rel="icon" type="image/png" href="../images/logo.png">
     <style>
         * { box-sizing: border-box; }
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #144999ff, #1b2836);
+            background: linear-gradient(to right, #144999ff, #144999ff);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -71,11 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             to { opacity: 1; transform: translateY(0); }
         }
         .box {
-            background: #121e2a;
+            background: #000000ff;
             padding: 30px;
             width: 400px;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            box-shadow: 0 0 20px rgba(124, 122, 122, 0.4);
             text-align: center;
         }
         .box img {
@@ -101,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-top: 20px;
         }
         button.btn {
-            background: #007BFF;
+            background: #144999ff;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -110,13 +114,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             cursor: pointer;
         }
         .btn:hover {
-            background: #0056b3;
+            background: #144999ff;
         }
         .login-link {
             font-size: 14px;
         }
         .login-link a {
-            color: #00cfff;
+            color: #144999ff;
             text-decoration: none;
         }
         footer {
@@ -129,13 +133,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <div class="box">
-    <img src="../images/logo.jpeg" alt="Logo">
+    <img src="../images/logo.png" alt="logo">
     <h2>Admin Register</h2>
 
     <?php
     // Display error message if exists 
     if (!empty($error)): ?>
-        <p style="color: #ff7373;"><?php echo htmlspecialchars($error); ?></p>
+        <p style="color: #144999ff;"><?php echo htmlspecialchars($error); ?></p>
     <?php endif; ?>
 
     <form method="post" enctype="multipart/form-data">
