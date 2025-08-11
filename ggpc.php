@@ -207,7 +207,7 @@ new Chart(ctx, {
             y: { beginAtZero: true, title: { display: true, text: 'Views' }, ticks: { color: '#333' } }
         }
     }
-});
+};
 </script>
 
 </body>
