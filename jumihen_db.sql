@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 26, 2025 at 02:27 AM
+-- Generation Time: Aug 11, 2025 at 01:18 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -19,6 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `jumihen_db`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `admin`
@@ -35,7 +38,16 @@ CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `email`, `password`, `picture`, `created_at`) VALUES
+(1, 'promise hendreson', 'hendresonpromise6@gmail.com', '$2y$10$koBeNYTpk82M.HVvvUATd.X7skmJW6qG7uwyhGrXzlPT1VKCywX/G', 'admin_689313c0c808b.jpg', '2025-08-06 08:35:12'),
+(2, '', '', '$2y$10$STT0.BcLqAPL7DkttKvi2evbh1AAmQRN//kbtvQ9HW5V7W8jiO14K', NULL, '2025-08-06 08:57:16'),
+(3, 'mayamiko khata', 'christinankawihe@gmail.com', '$2y$10$YN1KZelIotvukmDs6l2QguH3t6JVNOTeab5OraEAEavEVyC281Lz.', 'admin_6899b09f14695.png', '2025-08-11 08:58:07');
 
 -- --------------------------------------------------------
 
@@ -51,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `video` varchar(255) NOT NULL,
   `contact` varchar(15) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(20) NOT NULL DEFAULT 'pending',
   PRIMARY KEY (`id`),
   UNIQUE KEY `description` (`description`),
   UNIQUE KEY `photo` (`photo`)
@@ -70,16 +83,12 @@ CREATE TABLE IF NOT EXISTS `sellers` (
   `password` varchar(255) NOT NULL,
   `picture` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(20) NOT NULL DEFAULT 'pending',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
