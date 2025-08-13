@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 11, 2025 at 01:18 PM
+-- Generation Time: Aug 11, 2025 at 01:33 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -67,6 +67,21 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `description` (`description`),
   UNIQUE KEY `photo` (`photo`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_views`
+--
+
+DROP TABLE IF EXISTS `product_views`;
+CREATE TABLE IF NOT EXISTS `product_views` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `product_id` int NOT NULL,
+  `category` varchar(100) NOT NULL,
+  `viewed_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
