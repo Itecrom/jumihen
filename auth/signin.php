@@ -72,7 +72,7 @@
             color: #144999ff;
             text-decoration: none;
         }
-        footer {
+        .footer {
             position: absolute;
             bottom: 5px;
             font-size: 13px;
@@ -89,11 +89,9 @@
 <div>
     <h1>signin</h1>
     <form action="signin.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" name="username" id="username" placeholder="Username" required><br><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" name="strong password" id="strong password" placeholder="Password" required><br><br>
         
 
         <button type="submit">signin</button>

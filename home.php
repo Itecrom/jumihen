@@ -17,12 +17,12 @@ $file = 'includes/polowela.php';
         .box img {
             width: 100px;
             margin-bottom: 30px;
-            float: left;
-       .footer {
+            float: left;}
+             .footer {
             position: absolute;
             bottom: 5px;
             font-size: 13px;
-            color: #07021aff;
+            color: #ccc;
         }
     </style>
 </head>
@@ -54,7 +54,10 @@ $file = 'includes/polowela.php';
 <div style="margin:20px;">
 
 </div>
+<div>
 <footer>© Jumihen Admin 2025</footer>
+</div>
+
 
 </body>
 </html>

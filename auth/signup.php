@@ -89,22 +89,19 @@
 <div>
     <h1>seller signup</h1>
     <form action="signup.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" name="username" id="username" placeholder =username required><b></b>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" name="password" id="strong password" placeholder =password required><b></b>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+<input type="email" name="email" id="email" placeholder =g-mail/yahoo required><b></b>
+
         
-        <label for="picture">Picture:</label>
-        <input type="file" id="picture" name="picture" accept="image/*"><br><br>
+        <input type="file" name="pictures" id="pictures" placeholder =pictures required><b></b>
 
 
        <button type="submit">signup</button>
     </form>
-    <p>Don't have an account? <a href="signin.php">signin here</a>.</p>
+    <p>Don't have an account? <a href="signin.php">signin here</a></p>
 </div>
 <div>
     <footer>© Jumihen Admin 2025</footer>
