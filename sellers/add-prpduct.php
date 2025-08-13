@@ -1,4 +1,7 @@
-<?php include 'config.php'; ?>
+<?php 
+session_start();
+$file = 'includes/polowela.php';
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +11,12 @@
         header { background-color: blue; padding: 15px; color: white; }
         header a { color: white; margin: 0 10px; text-decoration:none; }
         form { background: #f5f5f5; padding:20px; margin:20px auto; width:400px; border-radius:5px; }
+        .footer {
+            position: absolute;
+            bottom: 5px;
+            font-size: 13px;
+            color: #ccc;
+        }
         input, textarea, select { width:100%; padding:8px; margin:5px 0; }
         button { background: blue; color: white; padding:10px; border:none; cursor:pointer; }
     </style>
@@ -15,7 +24,11 @@
 <body>
 
 <header>
-    <a href="home.php">🏠 Home</a>
+    <div class="logo">JUMIHEN</div>
+        <a href="../home.php">🏠 Home</a>
+        <a href="sellers/add-prpduct.php">⬆ Upload</a>
+        <a href="about.php">ℹ About Us</a>
+    </div>
 </header>
 
 <?php
@@ -58,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="file" name="video" accept="video/*">
     <button type="submit">Submit for Approval</button>
 </form>
-
+<footer>© Jumihen Admin 2025</footer>
 </body>
 </html>
+

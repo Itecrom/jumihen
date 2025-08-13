@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 11, 2025 at 01:33 PM
+-- Generation Time: Aug 13, 2025 at 10:23 AM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -38,16 +38,14 @@ CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `email`, `password`, `picture`, `created_at`) VALUES
-(1, 'promise hendreson', 'hendresonpromise6@gmail.com', '$2y$10$koBeNYTpk82M.HVvvUATd.X7skmJW6qG7uwyhGrXzlPT1VKCywX/G', 'admin_689313c0c808b.jpg', '2025-08-06 08:35:12'),
-(2, '', '', '$2y$10$STT0.BcLqAPL7DkttKvi2evbh1AAmQRN//kbtvQ9HW5V7W8jiO14K', NULL, '2025-08-06 08:57:16'),
-(3, 'mayamiko khata', 'christinankawihe@gmail.com', '$2y$10$YN1KZelIotvukmDs6l2QguH3t6JVNOTeab5OraEAEavEVyC281Lz.', 'admin_6899b09f14695.png', '2025-08-11 08:58:07');
+(4, 'promise hendreson', 'hendresonpromise6@gmail.com', '$2y$10$Pvf/ochXRN4viKLd4zuEZOcK6BSAzV8Yo4ucMON8qrE0prrHYZBnG', 'admin_6899f267b685b.jpg', '2025-08-11 13:38:47');
 
 -- --------------------------------------------------------
 

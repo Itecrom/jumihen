@@ -10,33 +10,35 @@ $file = 'includes/polowela.php';
         body { font-family: Arial; background-color: white; margin:0; }
         header { background-color: blue; padding: 12px; color: white; display:flex; align-items:center; justify-content:space-between; }
         header a { color: white; margin: 0 8px; text-decoration:none; }
-        .logo { font-size: 20px; font-weight:bold; }
+        .logo { font-size: 25px; font-weight:bold; }
         .search { margin: 20px; }
         .search input { padding:8px; width: 300px; }
         .item { border:1px solid #ddd; padding:10px; margin:10px; display:inline-block; width:200px; vertical-align:top; }
         .box img {
-            width: 25px;
-            margin-bottom: 15px;
-        }
-       footer {
+            width: 100px;
+            margin-bottom: 30px;
+            float: left;
+       .footer {
             position: absolute;
             bottom: 5px;
             font-size: 13px;
-            color: #ccc;
+            color: #07021aff;
         }
     </style>
 </head>
 
 <header>
        <div class="box">
- <img src="images/logo.png" alt="logo.png">
+            <img src="images/logo.png" alt="logo.png">
+        </div>
+ 
 </header>
 <body>
 
 <header>
     <div class="logo">JUMIHEN</div>
         <a href="home.php">🏠 Home</a>
-        <a href="upload.php">⬆ Upload</a>
+        <a href="sellers/add-prpduct.php">⬆ Upload</a>
         <a href="about.php">ℹ About Us</a>
     </div>
 </header>
