@@ -100,7 +100,7 @@ foreach ($categories as $cat) {
         <a href="add-product.php"><i class="fas fa-plus"></i> Add Product</a>
         <a href="admins.php"><i class="fas fa-users-cog"></i> Manage Admins</a>
         <a href="edit-profile.php"><i class="fas fa-user-edit"></i> Edit Profile</a>
-        <a href="store.php"><i class="fas fa-store"></i> View Store</a>
+        <a href="home.php"><i class="fas fa-store"></i> Go to Site</a>
         
         <a href="auth/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </nav>
