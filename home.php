@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
 
-=======
-<?php 
-=======
+
 <?php
->>>>>>> 784eb90aa1aa6379843944486bcb0aab6a82f3b4
 session_start();
 include("includes/polowela.php"); // database connection
 
@@ -214,7 +210,7 @@ $examples = [
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
-<<<<<<< HEAD
+
 </header>
 
 <div class="search">
@@ -232,9 +228,7 @@ $examples = [
 <footer>© Jumihen Admin 2025</footer>
 </div>
 
->>>>>>> 34a02bb3668f42de357e3843f48b91409908d879
-=======
->>>>>>> 784eb90aa1aa6379843944486bcb0aab6a82f3b4
+
 
     <!-- FOOTER -->
     <footer>
