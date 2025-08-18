@@ -1,6 +1,9 @@
+<<<<<<< HEAD
  
 
 
+=======
+>>>>>>> edc8f523b803f15822cfc9b06865a84e6c18447d
 <?php
 session_start();
 include("includes/polowela.php"); // database connection
@@ -210,6 +213,7 @@ $examples = [
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
+<<<<<<< HEAD
 
 </header>
 
@@ -229,6 +233,8 @@ $examples = [
 </div>
 
 
+=======
+>>>>>>> edc8f523b803f15822cfc9b06865a84e6c18447d
 
     <!-- FOOTER -->
     <footer>
