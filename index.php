@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include("includes/polowela.php"); // database connection
@@ -161,6 +162,19 @@ $examples = [
             <a href="about us.php"><i class="fa fa-info-circle"></i> About Us</a>
         </nav>
     </header>
+    <div class="search">
+    <form method="get" action="home.php">
+        <input type="text" name="q" placeholder="Search product...">
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+<h2 style="margin-left:20px;">Recent Approved Items</h2>
+<div style="margin:20px;">
+
+</div>
+<div>
+
 
     <!-- CONTENT -->
     <div class="container">
@@ -207,6 +221,11 @@ $examples = [
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
+
+
+</header>
+
+
 
     <!-- FOOTER -->
     <footer>
