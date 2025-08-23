@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/config.php';
+include '../includes/polowela.php';
 include '../includes/resize.php';
 
 if (!isset($_SESSION['seller_id'])) {

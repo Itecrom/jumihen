@@ -7,7 +7,7 @@ if (!isset($_SESSION['seller_id'])) {
     exit;
 }
 
-include '../includes/config.php';
+include '../includes/polowela.php';
 
 // Fetch seller info
 $seller_id = $_SESSION['seller_id'];
@@ -44,7 +44,7 @@ $result = $stmt->get_result();
 
     <h2>Welcome, <?php echo htmlspecialchars($name['name']); ?> 👋</h2>
     <a href="add-product.php" class="btn">+ Add New Product</a>
-    <a href="delete-product.php" class="btn">- Delete Product</a>
+    <a href="edit-product.php" class="btn">- Edit Product</a>
     <a href="delete-product.php" class="btn">- Delete Product</a>
     <a href="auth/logout.php" class="btn" style="float:right; margin-top:10px;">Logout</a>
 

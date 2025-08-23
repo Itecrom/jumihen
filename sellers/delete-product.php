@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/config.php';
+include '../includes/polowela.php';
 
 if (!isset($_SESSION['seller_id'])) {
     header("Location: ../store.php");
