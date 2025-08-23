@@ -1,110 +1,92 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>seller signup</title>
+    <title>Seller Signup</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
- <link rel="icon" type="image/png" href="../images/logo.png">
-    <style>
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #144999ff, #144999ff);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: #ffffff;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .box {
-            background: #000000ff;
-            padding: 30px;
-            width: 400px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(124, 122, 122, 0.4);
-            text-align: center;
-        }
-        .box img {
-            width: 70px;
-            margin-bottom: 15px;
-        }
-        .box h2 {
-            margin-bottom: 20px;
-        }
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            background: #e9e9e9;
-            font-size: 15px;
-        }
-        .btn-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
-        button.btn {
-            background: #144999ff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background: #144999ff;
-        }
-        .login-link {
-            font-size: 14px;
-        }
-        .login-link a {
-            color: #144999ff;
-            text-decoration: none;
-        }
-        .footer {
-            position: absolute;
-            bottom: 5px;
-            font-size: 13px;
-            color: #ccc;
-        }
-    </style>
-</head>
+
+<style>
+    body {
+    background: #001f3f;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: #000;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    width: 300px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background: #0074D9;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005fa3;
+}
+</style>
 <body>
-<div class="box">
-    
- <img src="../images/logo.png" alt="logo.png">
-<body>
-    
-<div>
-    <h1>seller signup</h1>
-    <form action="signup.php" method="post">
-        <input type="text" name="username" id="username" placeholder =username required><b></b>
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <small id="email-status"></small>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="text" name="contact" placeholder="Contact" required>
+            <input type="file" name="profile_pic" accept="image/*" required>
+            <button type="submit">Signup</button>
+        </form>
+        <p>Signed Up Already? <a href="Signin.php">Signin</a></p>
+    </div>
 
-        <input type="password" name="password" id="strong password" placeholder =password required><b></b>
+    <script>
+    document.getElementById("email").addEventListener("blur", function() {
+        const email = this.value;
+        fetch("validate_email.php?email=" + email)
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("email-status").textContent = data;
+            });
+    });
 
-<input type="email" name="email" id="email" placeholder =g-mail/yahoo required><b></b>
-
-        
-        <input type="file" name="pictures" id="pictures" placeholder =pictures required><b></b>
-
-
-       <button type="submit">signup</button>
-    </form>
-    <p>Don't have an account? <a href="signin.php">signin here</a></p>
-</div>
-<div>
-    <footer>© Jumihen Admin 2025</footer>
-</div>
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        fetch("signup_handler.php", {
+            method: "POST",
+            body: formData
+        }).then(res => res.text())
+          .then(data => {
+            if (data === 'success') {
+                alert("Registered successfully");
+                window.location.href = "signin.php";
+            } else {
+                alert(data);
+            }
+        });
+    });
+    </script>
 </body>
 </html>

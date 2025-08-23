@@ -145,11 +145,11 @@ foreach ($categories as $cat) {
     </thead>
     <tbody>
         <?php
-        $pendingsellers = $conn->query("SELECT id, username, email FROM sellers WHERE status = 'pending'");
+        $pendingsellers = $conn->query("SELECT id, name, email FROM sellers WHERE status = 'pending'");
         while ($u = $pendingsellers->fetch_assoc()):
         ?>
         <tr style="border-bottom:1px solid #ccc;">
-            <td style="padding:10px;"><?= htmlspecialchars($u['username']) ?></td>
+            <td style="padding:10px;"><?= htmlspecialchars($u['name']) ?></td>
             <td style="padding:10px;"><?= htmlspecialchars($u['email']) ?></td>
             <td style="padding:10px;">
                 <form method="POST" style="margin:0;">
