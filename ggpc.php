@@ -149,7 +149,7 @@ foreach ($categories as $cat) {
         while ($u = $pendingsellers->fetch_assoc()):
         ?>
         <tr style="border-bottom:1px solid #ccc;">
-            <td style="padding:10px;"><?= htmlspecialchars($u['name']) ?></td>
+            <td style="padding:10px;"><?= htmlspecialchars($u['username']) ?></td>
             <td style="padding:10px;"><?= htmlspecialchars($u['email']) ?></td>
             <td style="padding:10px;">
                 <form method="POST" style="margin:0;">
