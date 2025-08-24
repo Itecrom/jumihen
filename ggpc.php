@@ -145,7 +145,7 @@ foreach ($categories as $cat) {
     </thead>
     <tbody>
         <?php
-        $pendingsellers = $conn->query("SELECT id, name, email FROM sellers WHERE status = 'pending'");
+        $pendingsellers = $conn->query("SELECT id, username, email FROM sellers WHERE status = 'pending'");
         while ($u = $pendingsellers->fetch_assoc()):
         ?>
         <tr style="border-bottom:1px solid #ccc;">
