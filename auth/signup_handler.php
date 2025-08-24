@@ -1,12 +1,12 @@
 <?php
 include '../includes/polowela.php';
 
-$name = $_POST['name'] ?? '';
+$username = $_POST['username'] ?? '';
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
 $contact = $_POST['contact'] ?? '';
 
-if (empty($name) || empty($email) || empty($password) || empty($contact)) {
+if (empty($username) || empty($email) || empty($password) || empty($contact)) {
     echo "All fields required";
     exit;
 }
@@ -22,8 +22,8 @@ if (!move_uploaded_file($profilePic['tmp_name'], $targetFile)) {
     exit;
 }
 
-$stmt = $conn->prepare("INSERT INTO sellers (name, email, password, contact, profile_pic, status) VALUES (?, ?, ?, ?, ?, 'pending')");
-$stmt->bind_param("sssss", $name, $email, $hashed, $contact, $filename);
+$stmt = $conn->prepare("INSERT INTO sellers (username, email, password, contact, profile_pic, status) VALUES (?, ?, ?, ?, ?, 'pending')");
+$stmt->bind_param("sssss", $username, $email, $hashed, $contact, $filename);
 if ($stmt->execute()) {
     echo "success";
 } else {
