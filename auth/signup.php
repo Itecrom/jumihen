@@ -50,7 +50,7 @@ button:hover {
     <div class="form-container">
         <h2>Sign Up</h2>
         <form id="signupForm" enctype="multipart/form-data">
-            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="username" placeholder="username" required>
             <input type="email" name="email" id="email" placeholder="Email" required>
             <small id="email-status"></small>
             <input type="password" name="password" placeholder="Password" required>
