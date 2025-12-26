@@ -1,92 +1,98 @@
+<?php
+session_start();
+
+// Include DB config
+$configFile = '../includes/polowela.php';
+if (!file_exists($configFile)) {
+    die("Required configuration file missing.");
+}
+include($configFile);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $email    = $_POST["email"];
+    $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
+
+    $sql = "INSERT INTO sellers (username,email,password) VALUES ('$username','$email','$password')";
+    
+    if (mysqli_query($conn, $sql)) {
+        $message = "Account created successfully. Please sign in.";
+    } else {
+        $message = "Error: " . mysqli_error($conn);
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Seller Signup</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
-
+<title>Seller Signup</title>
 <style>
-    body {
-    background: #001f3f;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body{
+    background:#001f3f;
+    font-family:Arial;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    color:white;
 }
-
-.form-container {
-    background: #000;
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.8);
-    width: 300px;
+.form-box{
+    background:#002b80;
+    padding:25px;
+    border-radius:10px;
+    width:320px;
 }
-
-input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 5px;
+input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:6px;
 }
-
-button {
-    background: #0074D9;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
+.box {
+            background: #000000ff;
+            padding: 30px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(124, 122, 122, 0.4);
+            text-align: center;
+        }
+        .box img {
+            width: 70px;
+            margin-bottom: 15px;
+        }
+        .box h2 {
+            margin-bottom: 20px;
+        }
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    background:#0066ff;
+    color:white;
+    font-weight:bold;
 }
-
-button:hover {
-    background: #005fa3;
-}
+a{color:#aee2ff;}
 </style>
+</head>
 <body>
-    <div class="form-container">
-        <h2>Sign Up</h2>
-        <form id="signupForm" enctype="multipart/form-data">
-            <input type="text" name="username" placeholder="username" required>
-            <input type="email" name="email" id="email" placeholder="Email" required>
-            <small id="email-status"></small>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="text" name="contact" placeholder="Contact" required>
-            <input type="file" name="profile_pic" accept="image/*" required>
-            <button type="submit">Signup</button>
-        </form>
-        <p>Signed Up Already? <a href="Signin.php">Signin</a></p>
-    </div>
+<div class="box">
+    
+ <img src="../images/logo.png" alt="logo.png">
+    <h2>Seller signup</h2>
 
-    <script>
-    document.getElementById("email").addEventListener("blur", function() {
-        const email = this.value;
-        fetch("validate_email.php?email=" + email)
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("email-status").textContent = data;
-            });
-    });
 
-    document.getElementById("signupForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-        const formData = new FormData(this);
-        fetch("signup_handler.php", {
-            method: "POST",
-            body: formData
-        }).then(res => res.text())
-          .then(data => {
-            if (data === 'success') {
-                alert("Registered successfully");
-                window.location.href = "signin.php";
-            } else {
-                alert(data);
-            }
-        });
-    });
-    </script>
+<form method="POST">
+<input type="text" name="username" placeholder="Username" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="password" name="password" placeholder="Password" required>
+<input type="file" name="picture" accept="image/*">
+<button type="submit">Signup</button>
+</form>
+
+<p>Already have an account? <a href="signin.php">Sign In</a></p>
+</div>
+
 </body>
 </html>

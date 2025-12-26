@@ -110,7 +110,7 @@
     <div class="container">
         <h1>About Us</h1>
         <p class="intro">
-            This platform was proudly created by <b>Promise Henderson, Gladys Junta, Getrude Mission, and Christina Nkawihe</b>.  
+            This platform was proudly created by <b>Promise Henderson </b>and asisted by <b>Gladys Junta, Getrude Mission, and Christina Nkawihe</b>.  
             We are passionate developers and administrators working hard to connect buyers and sellers,  
             making it easier for you to access <b>Food, Clothes, Electronics, and School products</b> in one simple place.  
             <br><br>
@@ -122,22 +122,22 @@
             <div class="card">
                 <img src="images/admins/hendreson.jpg" alt="Promise Henderson">
                 <h3>Promise Henderson</h3>
-                <p>system manager & Admin</p>
+                <p>CEO And System Admin</p>
             </div>
             <div class="card">
                 <img src="images/admins/junta.jpg" alt="Gladys Junta">
                 <h3>Gladys Junta</h3>
-                <p>system Developer & Admin</p>
+                <p>Co-system Developer & Admin</p>
             </div>
             <div class="card">
                 <img src="images/admins/gutrude.jpg" alt="Getrude Mission">
                 <h3>Getrude Mission</h3>
-                <p>system Designer & Admin</p>
+                <p>co-system Designer & Admin</p>
             </div>
             <div class="card">
                 <img src="images/admins/christina.jpg" alt="Christina Nkawihe">
                 <h3>Christina Nkawihe</h3>
-                <p>System Developer & Admin</p>
+                <p>co-System Developer & Admin</p>
             </div>
         </div>
     </div>

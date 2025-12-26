@@ -57,8 +57,6 @@ img{width:90px;height:90px;border-radius:50%;object-fit:cover}
 <input type="text" name="username" value="<?= $admin['username'] ?>" required>
 <input type="email" name="email" value="<?= $admin['email'] ?>" required>
 
-<label>Change Photo</label>
-<input type="file" name="photo">
 
 <label>Change Password (optional)</label>
 <input type="password" name="password">
